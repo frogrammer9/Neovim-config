@@ -1,1 +1,2 @@
-require("config")
+require("Oskar.config")
+require("Oskar.lazy")

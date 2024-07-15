@@ -1,5 +1,3 @@
--- :help options
-
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
@@ -17,7 +15,7 @@ vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.ruler = true
 
 vim.opt.number = true                           -- set numbered lines
-vim.opt.relativenumber = false                  -- set relative numbered lines
+vim.opt.relativenumber = true					-- set relative numbered lines
 vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 
 vim.opt.smartindent = true                      -- make indenting smarter again
