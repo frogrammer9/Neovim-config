@@ -12,12 +12,8 @@ map("n", "<leader>qq", ":q!<CR>") -- exit without saveing
 map("n", "<leader>wq", ":wq<CR>") -- save and exit
 map("n", "<leader>ww", ":w<CR>") -- save
 map("n", "<leader>d", "Vyp") -- duplicate line
+map("n", "<leader>ft", ":TodoTelescope<CR>")
 
--- telescope
---
-
--- neo-tree
--- map("n", "<leader>e", ":Neotree toggle filesystem reveal left<CR>")
 
 -- lsp
 -- map("n", "<leader>i", vim.lsp.buf.hover)

@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	dependencies = {"hrsh7th/cmp-nvim-lsp", 'nvim-telescope/telescope-ui-select.nvim'},
+	dependencies = {"hrsh7th/cmp-nvim-lsp"},
 	config = function()
 		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
@@ -13,11 +13,11 @@ return {
 			vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 			vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
 			vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-			vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
 			vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
 			vim.keymap.set("n", "<leader>tr", function() vim.diagnostic.open_float() end, opts)
+			--vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+			vim.keymap.set('n', '<leader>ca', '<cmd>lua require("actions-preview").code_actions()<CR>', opts)
 		end
-		require("telescope").load_extension("ui-select")
 		lspconfig.lua_ls.setup({on_attach = on_attach, capabilities = capabilities})
 		lspconfig.pyre.setup({on_attach = on_attach, capabilities = capabilities})
 		lspconfig.clangd.setup({on_attach = on_attach, capabilities = capabilities})
