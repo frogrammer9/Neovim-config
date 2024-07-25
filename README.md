@@ -1,5 +1,11 @@
 # My neovim config
-
+## Installation
+Clone this repository into your .config directory.
+Then rename Neovim-config to nvim.
+### If you had any previous config run this first!
+```Bash
+rm -rf ~/.config/nvim;rm -rf ~/.local/share/nvim
+```
 ## Plugins
 - [harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
