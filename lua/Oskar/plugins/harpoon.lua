@@ -5,7 +5,8 @@ return {
 		harpoon:setup()
 
 		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-		vim.keymap.set("n", "<leader>r", function() harpoon:list():remove() end)
+		vim.keymap.set("n", "<leader>rf", function() harpoon:list():remove() end)
+		vim.keymap.set("n", "<leader>ra", function() harpoon:list():clear() end)
 
 		harpoon:setup({})
 
