@@ -9,7 +9,7 @@ map("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
 map("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 map("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 map("n", "<leader>qq", ":q!<CR>") -- exit without saveing
-map("n", "<leader>wq", ":wq<CR>") -- save and exit
+map("n", "<leader>wq", ":wqa<CR>") -- save and exit
 map("n", "<leader>ww", ":w<CR>") -- save
 map("n", "<leader>d", "Vyp") -- duplicate line
 map("n", "<leader>ft", ":TodoTelescope<CR>")
