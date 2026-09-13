@@ -1,50 +1,47 @@
 vim.pack.add({
-	{ src = 'https://github.com/nvim-mini/mini.nvim', version = 'stable' },
 	"https://www.github.com/ibhagwan/fzf-lua",
-	"https://github.com/ellisonleao/gruvbox.nvim",
 	"https://www.github.com/neovim/nvim-lspconfig",
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/meanderingprogrammer/render-markdown.nvim",
 	"https://github.com/windwp/nvim-ts-autotag",
+	"https://github.com/nvim-tree/nvim-web-devicons",
+	"https://github.com/windwp/nvim-autopairs",
+	"https://github.com/kylechui/nvim-surround",
+	"https://github.com/saghen/blink.lib",
+	"https://github.com/saghen/blink.cmp",
+
+	"https://github.com/ellisonleao/gruvbox.nvim",
 })
+
+-- ========================================
+--				   Themes
+-- ========================================
+
+require("gruvbox").setup()
 
 -- ========================================
 --				   Config
 -- ========================================
 
-require("gruvbox").setup()
+require("render-markdown").setup()
+require("nvim-ts-autotag").setup()
+require("nvim-web-devicons").setup()
+require("nvim-autopairs").setup()
+require("nvim-surround").setup()
 
 require("fzf-lua").setup({
 	ui_select = {},
-	keymap = {
-		fzf = {
-			["tab"] = "down",
-			["shift-tab"] = "up",
-		},
-	},
+	keymap = { fzf = { ["tab"] = "down", ["shift-tab"] = "up", }, },
 })
 
 require("oil").setup({
 	default_file_explorer = true,
 	view_options = {
-		show_hidden = false,
+		show_hidden = true,
 	}
 })
 
-require("mini.pairs").setup()
-require("mini.icons").setup()
-require("render-markdown").setup()
-
-local hipatterns = require('mini.hipatterns')
-hipatterns.setup({
-	highlighters = {
-		fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-		hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
-		todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
-		note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-		hex_color = hipatterns.gen_highlighter.hex_color(),
-	},
-})
-
-require('nvim-ts-autotag').setup()
+local cmp = require("blink.cmp")
+cmp.build():pwait()
+cmp.setup()
